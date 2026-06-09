@@ -1,25 +1,1105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Nexora</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Nexora | One Platform For Every Student
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:
+linear-gradient(
+180deg,
+#0f172a,
+#111827,
+#1e1b4b
+);
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(15px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.logo{
+
+font-size:42px;
+
+font-weight:800;
+
+background:linear-gradient(
+
+90deg,
+
+#a855f7,
+
+#3b82f6
+
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:17px;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#a855f7;
+}
+
+.nav-buttons{
+display:flex;
+gap:15px;
+}
+
+.login-btn{
+padding:12px 24px;
+background:transparent;
+border:2px solid #7c3aed;
+border-radius:14px;
+color:white;
+cursor:pointer;
+}
+
+.start-btn{
+padding:12px 24px;
+border:none;
+border-radius:14px;
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+color:white;
+cursor:pointer;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:140px 8%;
+}
+
+.hero-content{
+max-width:1100px;
+}
+
+.hero h1{
+font-size:85px;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.gradient{
+background:
+linear-gradient(
+90deg,
+#a855f7,
+#3b82f6
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+font-size:24px;
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:18px 35px;
+border:none;
+border-radius:15px;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.primary{
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+color:white;
+}
+
+.secondary{
+background:white;
+color:#7c3aed;
+}
+
+.hero-btn:hover{
+transform:translateY(-5px);
+}
+
+/* FLOATING LIGHTS */
+
+.glow{
+position:absolute;
+width:500px;
+height:500px;
+background:#7c3aed;
+filter:blur(180px);
+opacity:.15;
+left:-150px;
+top:100px;
+border-radius:50%;
+}
+
+.glow2{
+position:absolute;
+width:500px;
+height:500px;
+background:#2563eb;
+filter:blur(180px);
+opacity:.15;
+right:-150px;
+top:400px;
+border-radius:50%;
+}
+
+.section{
+padding:120px 8%;
+text-align:center;
+}
+
+.section-title{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.section-subtitle{
+font-size:20px;
+color:#cbd5e1;
+max-width:900px;
+margin:auto;
+margin-bottom:60px;
+}
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:40px;
+}
+
+}
+/* DASHBOARD PREVIEW */
+
+.dashboard-preview{
+display:flex;
+justify-content:center;
+}
+
+.preview-window{
+width:100%;
+max-width:1000px;
+background:#111827;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(124,58,237,.25);
+}
+
+.preview-header{
+background:#1f2937;
+padding:15px;
+display:flex;
+gap:10px;
+}
+
+.dot{
+width:12px;
+height:12px;
+border-radius:50%;
+}
+
+.red{background:#ef4444;}
+.yellow{background:#f59e0b;}
+.green{background:#22c55e;}
+
+.preview-grid{
+padding:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.preview-card{
+background:linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+padding:30px;
+border-radius:20px;
+font-weight:600;
+font-size:20px;
+}
+
+/* FEATURES */
+
+.features-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.feature-card{
+background:rgba(255,255,255,.05);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+border-color:#7c3aed;
+}
+
+.feature-icon{
+font-size:50px;
+margin-bottom:20px;
+}
+
+/* MODULES */
+
+.modules-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.module-card{
+background:linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+padding:25px;
+border-radius:20px;
+font-weight:600;
+font-size:20px;
+transition:.3s;
+}
+
+.module-card:hover{
+transform:scale(1.05);
+}
+/* STATS */
+
+.stats-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.stat-card{
+background:
+rgba(255,255,255,.05);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.stat-card h1{
+font-size:60px;
+color:#a855f7;
+margin-bottom:10px;
+}
+
+/* TESTIMONIALS */
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.testimonial-card{
+background:
+rgba(255,255,255,.05);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.testimonial-card h3{
+margin-bottom:15px;
+color:#a855f7;
+}
+
+.testimonial-card p{
+color:#cbd5e1;
+line-height:1.8;
+}
+
+/* CTA */
+
+.cta-section{
+padding:120px 8%;
+text-align:center;
+background:
+linear-gradient(
+135deg,
+#7c3aed,
+#2563eb
+);
+}
+
+.cta-section h2{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.cta-section p{
+font-size:22px;
+margin-bottom:35px;
+}
+
+.cta-btn{
+padding:18px 35px;
+border:none;
+border-radius:15px;
+background:white;
+color:#7c3aed;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+padding:60px;
+text-align:center;
+}
+
+.footer-content h2{
+font-size:45px;
+margin-bottom:15px;
+background:
+linear-gradient(
+90deg,
+#a855f7,
+#3b82f6
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.footer-content p{
+color:#cbd5e1;
+}
+</style>
+
 </head>
+
 <body>
-    <h1>Nexora</h1>
-    <p>The All-in-One Student Ecosystem</p>
-    <button>Join Waitlist</button>
-    <h2>Features</h2>
-    <div class="card">Smart Study Hub</div>
-    <div class="card">Team Collaboration</div>
-    <div class="card">Career Development</div>
-    <div class="card">AI Assistant</div>
-    <div class="card">Productivity Tools</div>
-    <div class="card">Student Community</div>
-    <h2>Our Vision</h2>
-    <p>
-        Built by students, for students.
-        One platform for learning, collaboration, productivity, and career growth.
-    </p>
+
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<nav class="navbar">
+
+<div class="logo">
+NEXORA
+</div>
+
+<div class="nav-links">
+
+<a href="#features">
+Features
+</a>
+
+<a href="#modules">
+Modules
+</a>
+
+<a href="#stats">
+Stats
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</div>
+
+<div class="nav-buttons">
+
+<button
+
+class="login-btn"
+
+onclick="window.location.href='login.html'">
+
+Login
+
+</button>
+<button
+
+class="start-btn"
+
+onclick="window.location.href='signup.html'">
+
+Get Started
+
+</button>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+Transform Your
+
+<span class="gradient">
+
+Student Journey
+
+</span>
+
+With Nexora
+
+</h1>
+
+<p>
+
+Manage academics,
+attendance,
+assignments,
+notes,
+projects,
+career growth,
+AI tools and productivity
+from one intelligent platform.
+
+</p>
+
+<div class="hero-buttons">
+
+<button
+
+class="hero-btn primary"
+
+onclick="window.location.href='signup.html'">
+
+🚀 Launch Nexora
+
+</button>
+
+<button
+class="hero-btn secondary">
+
+📚 Explore Features
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="modules" class="section">
+
+<h2 class="section-title">
+
+Core Nexora Modules
+
+</h2>
+
+<p class="section-subtitle">
+
+Everything integrated into one ecosystem.
+
+</p>
+
+<div class="modules-grid">
+
+<div class="module-card">🏠 Dashboard</div>
+
+<div class="module-card">🎓 Academic Hub</div>
+
+<div class="module-card">✅ Tasks & Productivity</div>
+
+<div class="module-card">🤖 Nexora AI</div>
+
+<div class="module-card">🚀 Project Hub</div>
+
+<div class="module-card">💼 Career Hub</div>
+
+<div class="module-card">🌐 Community Hub</div>
+
+<div class="module-card">📅 Calendar</div>
+
+<div class="module-card">💬 Messages</div>
+
+<div class="module-card">🏫 College Hub</div>
+
+<div class="module-card">☁️ Storage Hub</div>
+
+<div class="module-card">💰 Finance Hub</div>
+
+<div class="module-card">❤️ Health & Wellness</div>
+
+<div class="module-card">🏆 Rewards Hub</div>
+
+<div class="module-card">📊 Analytics</div>
+
+</div>
+
+</section>
+<!-- FEATURES -->
+
+<section
+id="features"
+class="section">
+
+<h2 class="section-title">
+
+Why Students Choose Nexora
+
+</h2>
+
+<p class="section-subtitle">
+
+Built specifically for modern students who want everything organized in one place.
+
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+
+<div class="feature-icon">
+🎓
+</div>
+
+<h3>
+Academic Hub
+</h3>
+
+<p>
+Manage attendance, notes,
+assignments, GPA and subjects.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+✅
+</div>
+
+<h3>
+Tasks & Productivity
+</h3>
+
+<p>
+Organize tasks, schedules,
+deadlines and study plans.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+🤖
+</div>
+
+<h3>
+Nexora AI
+</h3>
+
+<p>
+AI powered academic,
+productivity and career assistant.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+🚀
+</div>
+
+<h3>
+Project Hub
+</h3>
+
+<p>
+Build, manage and showcase
+projects professionally.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+💼
+</div>
+
+<h3>
+Career Hub
+</h3>
+
+<p>
+Prepare for internships,
+placements and interviews.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+🌐
+</div>
+
+<h3>
+Community Hub
+</h3>
+
+<p>
+Connect and collaborate
+with students worldwide.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+📊
+</div>
+
+<h3>
+Analytics
+</h3>
+
+<p>
+Track academic performance
+and productivity growth.
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<div class="feature-icon">
+☁️
+</div>
+
+<h3>
+Cloud Storage
+</h3>
+
+<p>
+Store notes, files and
+project resources securely.
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section id="stats" class="section">
+
+<h2 class="section-title">
+
+Nexora In Numbers
+
+</h2>
+
+<p class="section-subtitle">
+
+Building the future of student productivity and success.
+
+</p>
+
+<div class="stats-grid">
+
+<div class="stat-card">
+
+<h1>17+</h1>
+
+<p>Core Modules</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>100+</h1>
+
+<p>Integrated Features</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>24/7</h1>
+
+<p>AI Assistance</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>1</h1>
+
+<p>Unified Student Platform</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+
+<section class="cta-section">
+
+<h2>
+
+Ready To Transform
+Your Student Journey?
+
+</h2>
+
+<p>
+
+Join Nexora today and experience
+the future of student productivity.
+
+</p>
+
+<button
+class="cta-btn"
+onclick="window.location.href='signup.html'">
+
+🚀 Get Started Now
+
+</button>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="footer-content">
+
+<h2>
+
+NEXORA
+
+</h2>
+
+<p>
+
+One Platform For Every Student
+
+</p>
+
+<br>
+
+<p>
+
+Academic Hub • Tasks • AI • Career • Projects
+
+</p>
+
+<br>
+
+<p>
+
+Built By Manoj M
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 Nexora. All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+<script>
+
+// Smooth Scroll Animation
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+anchor.addEventListener('click', function(e) {
+
+e.preventDefault();
+
+document.querySelector(
+this.getAttribute('href')
+).scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+});
+
+});
+
+// Navbar Shadow
+
+window.addEventListener("scroll", function(){
+
+let navbar =
+document.querySelector(".navbar");
+
+if(window.scrollY > 50){
+
+navbar.style.boxShadow =
+"0 10px 30px rgba(0,0,0,.3)";
+
+}
+
+else{
+
+navbar.style.boxShadow =
+"none";
+
+}
+
+});
+
+// Fade In Animation
+
+const observer =
+new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity = "1";
+
+entry.target.style.transform =
+"translateY(0px)";
+
+}
+
+});
+
+},
+
+{
+threshold:0.15
+}
+
+);
+
+document.querySelectorAll(
+
+'.feature-card,.module-card,.stat-card,.testimonial-card,.preview-card'
+
+).forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform=
+"translateY(40px)";
+
+card.style.transition=
+"all .8s ease";
+
+observer.observe(card);
+
+});
+
+// Counter Animation
+
+let statsStarted = false;
+
+function startCounters(){
+
+if(statsStarted) return;
+
+statsStarted = true;
+
+const counters =
+document.querySelectorAll(
+".stat-card h1"
+);
+
+counters.forEach(counter=>{
+
+let target =
+counter.innerText;
+
+let value =
+parseInt(target);
+
+if(isNaN(value)) return;
+
+let count = 0;
+
+let speed =
+Math.ceil(value/30);
+
+let interval =
+setInterval(()=>{
+
+count += speed;
+
+if(count >= value){
+
+counter.innerText =
+target;
+
+clearInterval(interval);
+
+}
+
+else{
+
+counter.innerText =
+count + "+";
+
+}
+
+},40);
+
+});
+
+}
+
+window.addEventListener(
+"scroll",
+function(){
+
+let stats =
+document.querySelector(
+"#stats"
+);
+
+if(!stats) return;
+
+let pos =
+stats.getBoundingClientRect().top;
+
+if(pos < window.innerHeight){
+
+startCounters();
+
+}
+
+});
+
+</script>
+
 </body>
+
 </html>
